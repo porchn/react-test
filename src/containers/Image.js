@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Loadimage} from '../redux/actions/image';
 import {connect} from 'react-redux';
+import Imagelist from '../components/Imagelist';
 
 const mapStateToProps=(state)=>{
   return {
@@ -17,20 +18,11 @@ const mapDispatchToProps=(dispatch)=>{
 }
 
 class Image extends Component {
-  
   render() {
     return (
-        <div>
-          <h1>{this.props.imgdata.status}</h1>
-          <button onClick={()=>this.props.loadimage()}> load </button>
-          <div>
-            {
-                this.props.imgdata.result.map((image)=>
-                  <p key={image.id}>{image.id}</p>
-                )
-            }
-          </div>
-        </div>
+      <div className='image'>
+        <Imagelist data={this.props}/>
+      </div>
     );
   }
 }
