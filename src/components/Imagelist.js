@@ -12,7 +12,7 @@ export default class Imagelist extends Component {
                 <div id='showimage' className='showimage' style={{height:"200px",background: "#eee"}}></div>
                 {
                     result.map((image)=>
-                    <p key={image.id} onClick={()=>this.showImage(image)}>{image.id}</p>
+                    <p key={image.id} onClick={()=>this.showImage(image)} style={{cursor:'pointer'}}>{image.id}</p>
                     )
                 }
             </div>
