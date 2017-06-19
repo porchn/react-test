@@ -17,21 +17,18 @@ const mapDispatchToProps=(dispatch)=>{
 }
 
 class Image extends Component {
-
-  loadimages(){
-    this.props.loadimage()
-  }
+  
   render() {
     return (
         <div>
           <h1>{this.props.imgdata.status}</h1>
-          <button onClick={()=>this.loadimages()}> load </button>
+          <button onClick={()=>this.props.loadimage()}> load </button>
           <div>
-            {/*{
+            {
                 this.props.imgdata.result.map((image)=>
-                  <p>{image.id}</p>
+                  <p key={image.id}>{image.id}</p>
                 )
-            }*/}
+            }
           </div>
         </div>
     );

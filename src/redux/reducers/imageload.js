@@ -1,6 +1,7 @@
 import {IMAGE_FAILURE,IMAGE_SUCCESS,IMAGE_REQUEST} from '../../constants/actionTypes';
 
-export default (state={status:'Load Images',result:{}},action)=>{
+export default (state={status:'Load Images',result:[]},action)=>{
+//export default (state={status:'Load Images',result:{}},action)=>{
     switch (action.type) {
         case IMAGE_REQUEST:
             return {
