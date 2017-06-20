@@ -6,13 +6,12 @@ import { apiMiddleware } from 'redux-api-middleware'
 import thunk from 'redux-thunk'
 
 import { loadTranslations, setLocale, syncTranslationWithStore } from 'react-redux-i18n';
-import en  from '../../languages/en';
+import language  from '../../languages';
+
 //let store = createStore(reducers);
 const logger = createLogger({
         //predicate: (getState, action) => action.type !== 'INC'
 });
-
-console.log(en);
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -25,7 +24,7 @@ const middlewares = [
 let store = createStore(reducers,composeEnhancers(applyMiddleware(...middlewares)));
 
 syncTranslationWithStore(store)
-store.dispatch(loadTranslations(en));
-store.dispatch(setLocale('en'));
+store.dispatch(loadTranslations(language));
+store.dispatch(setLocale('th'));
 
 export default store;

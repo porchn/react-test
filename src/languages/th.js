@@ -1,7 +1,7 @@
 export default {
         application: {
-            title: 'Awesome app with i18n!',
-            hello: 'Hello, %{name}!'
+            title: 'แอพฯสุดเจ๋งด้วย i18n!',
+            hello: 'สวัสดีครับ, %{name}!'
         },
         date: {
             long: 'MMMM Do, YYYY'
