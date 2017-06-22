@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Loadimage} from '../redux/actions/image';
+import {Loadimage,Showimage} from '../redux/actions/image';
 import {connect} from 'react-redux';
 import Imagelist from '../components/Imagelist';
 
@@ -14,6 +14,9 @@ const mapDispatchToProps=(dispatch)=>{
   return{
     loadimage:()=>{
       dispatch(Loadimage());
+    },
+    showimage:(image)=>{
+      dispatch(Showimage(image));
     }
   }
 }

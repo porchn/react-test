@@ -1,6 +1,6 @@
-import {IMAGE_FAILURE,IMAGE_SUCCESS,IMAGE_REQUEST} from '../../constants/actionTypes';
+import {IMAGE_FAILURE,IMAGE_SUCCESS,IMAGE_REQUEST,SHOW_IMAGE} from '../../constants/actionTypes';
 
-export default (state={status:'Load Images',result:[]},action)=>{
+export default (state={status:'Load Images',result:[],image:[]},action)=>{
 //export default (state={status:'Load Images',result:{}},action)=>{
     switch (action.type) {
         case IMAGE_REQUEST:
@@ -17,6 +17,12 @@ export default (state={status:'Load Images',result:[]},action)=>{
             return {
                 ...state,
                 status:'Network request failed'
+            }
+        case SHOW_IMAGE:
+            return{
+                ...state,
+                image:action.payload,
+                status:'show image'
             }
         default:
             return state
