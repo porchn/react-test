@@ -7,7 +7,7 @@ export default class Imagelist extends Component {
         const {imgdata:{status,result,image},loadimage,showimage}=this.props.data;
         return (
             <div>
-            <h1>{status} <Translate value="application.title"/></h1>
+            <h1>{status} <Translate value="application.title"/> 555</h1>
             <button onClick={()=>loadimage()}> load </button>
             <div>
                 <div id='showimage' className='showimage' style={{height:"200px",background: "#eee"}}><img key ={image.id} src={image.link} style={{height:"200px"}} alt={image.name} /></div>
