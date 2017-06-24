@@ -6,7 +6,6 @@ import Counter from './Counter'
 import Image from './Image';
 import Header from './Header'
 
-
 const mapStateToProps=(state)=>{
   return {
     i18n:state.i18n,
@@ -37,6 +36,9 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
+        <div>
+          KUY KUY
+        </div>
         <Header/>
         <Counter/>
         <Image/>

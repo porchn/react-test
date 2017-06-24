@@ -3,8 +3,11 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import store from './redux/store/configStore'
 import App from './containers/App';
+//import Geo from './containers/Geo';
+
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
+import { AppContainer } from 'react-hot-loader';
 
 
 // ReactDOM.render(
@@ -16,23 +19,21 @@ import './index.css';
 //     document.getElementById('root')
 // );
 
-import { AppContainer } from 'react-hot-loader'
-
-const render=(Component)=>{
+const render=()=>{
   ReactDOM.render(
     <Provider store={store}>
         <AppContainer>
-            <Component />
+          <App/>
         </AppContainer>
     </Provider>, 
     document.getElementById('root')
   )
 }
 
-render(App)
+render();
 
 if (module.hot) {
-  module.hot.accept('./containers/App', () => { render(App) })
+  module.hot.accept('./containers/App', () => { render() })
 }
 
 registerServiceWorker();
