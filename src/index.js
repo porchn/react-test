@@ -9,7 +9,8 @@ import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 import { AppContainer } from 'react-hot-loader';
 
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+// import createBrowserHistory from 'history/createBrowserHistory';
 
 // ReactDOM.render(
 //     <Provider store={store}>
@@ -25,10 +26,10 @@ const render=()=>{
     <Provider store={store}>
         <AppContainer>
           <Router>
-            <Switch>
+            <div>
               <Route exact path='/' component={App}/>
-              <Route exact path='/geo' component={Geo}/>
-            </Switch>
+              <Route path='/geo' component={Geo}/>
+            </div>
           </Router>
         </AppContainer>
     </Provider>, 
@@ -39,7 +40,8 @@ const render=()=>{
 render();
 
 if (module.hot) {
-  module.hot.accept('./containers/App', () => { render() })
+  module.hot.accept('./containers/App', () => { render() });
+  module.hot.accept('./containers/Geo', () => { render() });
 }
 
 registerServiceWorker();

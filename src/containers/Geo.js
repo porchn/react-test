@@ -37,7 +37,7 @@ class Geo extends Component {
     return (
       <div className='App'>
         <div>
-          KUY Geo sdf
+          KUY Geo asdfasd
         </div>
         <Header/>
         <Counter/>

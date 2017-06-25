@@ -37,7 +37,7 @@ class App extends Component {
     return (
       <div className='App'>
         <div>
-          KUY sdaf
+          KUY
         </div>
         <Header/>
         <Counter/>
